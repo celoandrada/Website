@@ -1,0 +1,61 @@
+<div class="logo-ticker">
+  <div class="logo-track">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/danza.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/crebit.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/hlios.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/tempo.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/thevibe.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/utopia.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/verity.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/starbeam.png">
+
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/danza.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/crebit.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/hlios.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/tempo.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/thevibe.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/utopia.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/verity.png">
+    <img src="https://raw.githubusercontent.com/celoandrada/website/main/logos/starbeam.png">
+  </div>
+</div>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  .logo-ticker {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 24px 0;
+  }
+
+  .logo-track {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    width: max-content;
+    animation: scrollLogos 24s linear infinite;
+  }
+
+  .logo-track img {
+    height: 58px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.85;
+  }
+
+  @keyframes scrollLogos {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
