@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.scene {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  perspective: 900px;
+}
+
+.globe {
+  position: relative;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255,255,255,.35), transparent 22%),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,.12), transparent 25%),
+    radial-gradient(circle, #1b1b1b 0%, #080808 65%, #000 100%);
+  box-shadow:
+    inset -35px -25px 80px rgba(255,255,255,.08),
+    inset 30px 20px 70px rgba(255,255,255,.08),
+    0 0 80px rgba(255,255,255,.10);
+  animation: float 5s ease-in-out infinite;
+}
+
+.globe::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,.18) 0px,
+      rgba(255,255,255,.18) 1px,
+      transparent 2px,
+      transparent 12px
+    );
+  opacity: .22;
+  border: 1px solid rgba(255,255,255,.18);
+  animation: rotateLines 14s linear infinite;
+}
+
+.globe::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.25), transparent 18%);
+  filter: blur(2px);
+}
+
+.orbit {
+  position: absolute;
+  inset: -28px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 50%;
+  transform: rotateX(68deg) rotateZ(-20deg);
+  animation: spin 9s linear infinite;
+}
+
+.orbit.two {
+  inset: 18px;
+  transform: rotateX(72deg) rotateZ(35deg);
+  animation-duration: 12s;
+}
+
+.dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(255,255,255,.9);
+}
+
+.dot.one { top: 18px; left: 50%; }
+.dot.two { bottom: 34px; left: 22%; }
+.dot.three { right: 18px; top: 45%; }
+
+.label {
+  position: absolute;
+  color: rgba(255,255,255,.8);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+}
+
+.label.a { top: 70px; right: -40px; }
+.label.b { bottom: 92px; left: -58px; }
+.label.c { bottom: 28px; right: 14px; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotateY(0deg); }
+  50% { transform: translateY(-14px) rotateY(8deg); }
+}
+
+@keyframes rotateLines {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  from { transform: rotateX(68deg) rotateZ(0deg); }
+  to { transform: rotateX(68deg) rotateZ(360deg); }
+}
+</style>
+</head>
+
+<body>
+  <div class="scene">
+    <div class="globe">
+      <div class="orbit">
+        <div class="dot one"></div>
+        <div class="dot two"></div>
+        <div class="dot three"></div>
+      </div>
+
+      <div class="orbit two">
+        <div class="dot one"></div>
+        <div class="dot two"></div>
+      </div>
+
+      <div class="label a">Marketing</div>
+      <div class="label b">Analytics</div>
+      <div class="label c">Growth</div>
+    </div>
+  </div>
+</body>
+</html>
